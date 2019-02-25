@@ -1,0 +1,23 @@
+{
+  "name": "web-knowledge",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/signorhua/web-knowledge.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/signorhua/web-knowledge/issues"
+  },
+  "homepage": "https://github.com/signorhua/web-knowledge#readme",
+  "devDependencies": {
+    "eslint": "^5.14.1"
+  }
+}
