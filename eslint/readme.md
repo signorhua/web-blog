@@ -29,4 +29,26 @@
         Which style guide do you want to follow?    你想遵循哪种风格的指南?
 
         What format do you want your config file to be in?  您希望配置文件的格式是什么?
-        
+
+    3.在package.json中配置eslintConfig模块
+
+----
+## eslint命令使用记录
+    1.eslilnt file.js 指定目录文件 
+        eslint . 检查所有文件
+    2.(.eslintignore文件)指定忽略文件
+    3.eslint --fix 修复文件
+
+----
+## eslint中使用扩展 (扩展配置规则)
+  extends:airbnb-base 
+  https://www.jianshu.com/p/221d55a9170c 
+  https://github.com/airbnb/javascript
+
+----
+## eslint规则使用记录
+    0 = off, 1 = warn, 2 = error
+    warn 发出警告，不终止程序
+    error 发出错误，终止程序
+
+    no-console  不使用console.log

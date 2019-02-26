@@ -1,8 +1,8 @@
 module.exports = {
   env: {
-    browser: true,
-    es6: true,
-    node: true,
+    browser: true, 
+    es6: true,  
+    node: true, 
   },
   extends: 'airbnb-base',
   globals: {
@@ -14,5 +14,6 @@ module.exports = {
     sourceType: 'module',
   },
   rules: {
+    'no-console':0
   },
 };

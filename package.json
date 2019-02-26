@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "eslint_Init": "eslint --init"
+    "eslint_Init": "eslint --init",
+    "eslint_Check": "eslint .",
+    "eslint_fix": "eslint --fix ."
   },
   "repository": {
     "type": "git",
