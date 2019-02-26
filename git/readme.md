@@ -21,3 +21,23 @@
         文件夹
         node_modules/*  忽略node_modules底下所有内容
         
+----
+### git 提交到线上
+        1.git status 查看哪些文件被修改，哪些文件待提交
+        
+        2.git分区
+                工作区
+                缓存区
+                版本库
+        工作区 => git add => 缓存区 => git commit => 版本库
+
+        git add .     提交所有文件到缓存区
+        git add 文件  提交某个文件到缓存区
+        git commit -m 生成版本库
+
+        3.提交到远程 线上
+        git push -u
+
+----
+### git 更新代码到本地
+        git pull
