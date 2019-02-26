@@ -29,7 +29,7 @@
                 工作区
                 缓存区
                 版本库
-        工作区 => git add => 缓存区 => git commit => 版本库
+        工作区 => git add => (暂存区)缓存区 => git commit => 版本库
 
         git add .     提交所有文件到缓存区
         git add 文件  提交某个文件到缓存区
