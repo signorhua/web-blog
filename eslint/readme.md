@@ -51,4 +51,23 @@
     warn 发出警告，不终止程序
     error 发出错误，终止程序
 
-    no-console  不使用console.log
+| 规则名字 | 规则内容 | 规则备注 |
+| :------| ------ | :------: |
+| no-console | 不使用console.log |  |
+| no-multi-spaces | 不允许键和值之间存在多个空格 |  |
+| template-curly-spacing | 要求或禁止模板字符串中的嵌入表达式周围空格的使用 |  |
+| prefer-template | 要求使用模板字面量而非字符串连接 | |
+| spaced-comment | 强制在注释中 //或 /*使用一致的空格 | |
+| no-trailing-spaces | 禁用行尾空格 | |
+| indent | 强制使用一致的缩进 | |
+|comma-dangle | 要求或禁止末尾逗号| |
+|comma-spacing|强制在逗号前后使用一致的空格| |
+|no-multiple-empty-lines|禁止出现多行空行| |
+|eol-last | 要求或禁止文件末尾存在空行 | |
+|object-curly-spacing | 强制在大括号中使用一致的空格 | |
+|key-spacing    |   强制在对象字面量的属性中键和值之间使用一致的间距| |
+|quote-props | 要求对象字面量属性名称用引号括起来| |
+   
+         
+         
+          
