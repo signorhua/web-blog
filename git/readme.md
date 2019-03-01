@@ -41,3 +41,20 @@
 ----
 ### git 更新代码到本地
         git pull
+
+
+----
+### gitLab使用
+        
+        1.和公司配合创建新的账号
+        2.拉入到相应的项目里面去，配置权限
+        3.git的全局配置成公司的账号
+                git config --global user.name
+                git config --global user.email
+        4.需要ssh的情况
+                a.ssh-keygen -t rsa -C "邮箱地址"
+                b.一路回车
+                c.生成的文件id_rsa.pub公钥复制到github或者gitLab上使用
+        
+
+        
