@@ -56,5 +56,8 @@
                 b.一路回车
                 c.生成的文件id_rsa.pub公钥复制到github或者gitLab上使用
         
+----
+### git .gitattributes文件 
 
-        
+        1.text eol 设置文件行尾结束是以 LF 还是CRLF 结尾  eol=lf ; 入库时将行尾规范为LF，检出时禁止将行尾转换为CRLF
+        *.js text eol=lf 
