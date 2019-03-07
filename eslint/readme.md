@@ -3,7 +3,7 @@
 ----
 ## 项目安装eslint
     1.npm install eslint --save-dev (--save-dev 开发依赖)
-    2.eslint init 初始化eslint (利用package.json的script脚本运行执行)
+    2.eslint --init 初始化eslint (利用package.json的script脚本运行执行)
 
         How would you like to use ESLint?
         To check syntax only    (仅检查语法)
@@ -51,6 +51,8 @@
     warn 发出警告，不终止程序
     error 发出错误，终止程序
 
+    https://cn.eslint.org/docs/rules/
+
 | 规则名字 | 规则内容 | 规则备注 |
 | :------| ------ | :------: |
 | no-console | 不使用console.log |  |
@@ -66,7 +68,15 @@
 |eol-last | 要求或禁止文件末尾存在空行 | |
 |object-curly-spacing | 强制在大括号中使用一致的空格 | |
 |key-spacing    |   强制在对象字面量的属性中键和值之间使用一致的间距| |
-|quote-props | 要求对象字面量属性名称用引号括起来| |
+|quote-props | 要求对象字面量属性名称用引号括起来|
+|no-undef| 禁用未声明的变量，除非它们在 /*global */ 注释中被提到 在eslint中配置过的除外globals和env属性 |
+|no-undef-init | 禁止将变量初始化为 undefined| |
+|prefer-arrow-callback | 要求回调函数使用箭头 | |
+|arrow-spacing | 强调箭头函数前后使用一致的空格| |
+|linebreak-style | 强制使用一致的换行风格 | |
+|space-before-blocks |强制在块之前使用一致的空格 | |
+|space-infix-ops | 	要求操作符周围有空格  | |
+
    
          
          
