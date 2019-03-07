@@ -76,6 +76,7 @@
 |linebreak-style | 强制使用一致的换行风格 | |
 |space-before-blocks |强制在块之前使用一致的空格 | |
 |space-infix-ops | 	要求操作符周围有空格  | |
+|no-plusplus | 禁用一元操作符 ++ 和 -- | |
 
    
          
