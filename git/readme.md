@@ -61,3 +61,9 @@
 
         1.text eol 设置文件行尾结束是以 LF 还是CRLF 结尾  eol=lf ; 入库时将行尾规范为LF，检出时禁止将行尾转换为CRLF
         *.js text eol=lf 
+
+
+----
+### git commit --amend
+
+        修改最近一次commit的备注信息
