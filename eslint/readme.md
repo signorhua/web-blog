@@ -77,8 +77,6 @@
 |space-before-blocks |强制在块之前使用一致的空格 | |
 |space-infix-ops | 	要求操作符周围有空格  | |
 |no-plusplus | 禁用一元操作符 ++ 和 -- | |
-
-   
-         
-         
-          
+|object-shorthand | 要求或禁止对象字面量中方法和属性使用简写语法 | |
+|comma-dangle | 要求或禁止末尾逗号 | |
+|no-throw-literal | 禁止抛出异常字面量 | |
