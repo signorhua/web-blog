@@ -45,6 +45,10 @@
   https://www.jianshu.com/p/221d55a9170c 
   https://github.com/airbnb/javascript
 
+## eslint忽略某个文件 
+    1.在.eslintgnore中添加
+    2.在单个文件中顶部添加注释 /* eslint-disable */
+
 ----
 ## eslint规则使用记录
     0 = off, 1 = warn, 2 = error
@@ -80,3 +84,5 @@
 |object-shorthand | 要求或禁止对象字面量中方法和属性使用简写语法 | |
 |comma-dangle | 要求或禁止末尾逗号 | |
 |no-throw-literal | 禁止抛出异常字面量 | |
+|import/newline-after-import | 下一行不是import或者require是否要换行 | |
+|no-extra-semi | 禁止不必要的分号 | |
