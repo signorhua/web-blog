@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>postMessage儿子</title>
+</head>
+<body>
+    i  am child 
+    <button id="closeMe" onclick="parentClose()" >closeMe</button>
+    <script>
+        function parentClose(){
+            //不可以直接这么调用，会产生跨域问题
+            // top.closeIframe();
+            // 使用postMessage实现跨域问题
+            window.parent.postMessage('close', 'http://127.0.0.1:5500');
+        }        
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        iframe {
+            border:1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    i am parent
+    <iframe src="./brother.html" frameborder="0"></iframe>
+    <iframe name="brother1" src="./brother1.html" frameborder="0"></iframe>
+    <script>
+        top.desName = 'parentIframe'
+        top.getBrother = function(window,brotherName){
+            const AllIframe = Array.from(top.document.getElementsByTagName('iframe'));
+            const FilterIframe = AllIframe.filter((iframe)=> iframe.contentWindow !== window)
+            if(!brotherName){return;}
+            const targetBrother = FilterIframe.find((iframe)=> iframe.name === brotherName )
+            targetBrother.contentWindow.say()
+        }
+    </script>
+</body>
+</html>
