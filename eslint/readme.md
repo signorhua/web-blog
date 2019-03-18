@@ -82,7 +82,13 @@
 |space-infix-ops | 	要求操作符周围有空格  | |
 |no-plusplus | 禁用一元操作符 ++ 和 -- | |
 |object-shorthand | 要求或禁止对象字面量中方法和属性使用简写语法 | |
-|comma-dangle | 要求或禁止末尾逗号 | |
 |no-throw-literal | 禁止抛出异常字面量 | |
 |import/newline-after-import | 下一行不是import或者require是否要换行 | |
 |no-extra-semi | 禁止不必要的分号 | |
+|arrow-body-style | 要求箭头函数体使用大括号 | |
+|keyword-spacing | 强制在关键字前后使用一致的空格 | |
+|space-in-parens | 强制在圆括号内使用一致的空格 | |
+| no-plusplus | 禁用一元操作符 ++ 和 -- |  |
+|operator-assignment | 要求或禁止在可能的情况下使用简化的赋值操作符 | |
+|no-else-return | 	禁止 if 语句中 return 语句之后有 else 块 | |
+|no-shadow | 	禁止变量声明与外层作用域的变量同名 | |
