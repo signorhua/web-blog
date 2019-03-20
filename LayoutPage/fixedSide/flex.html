@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .parent {
+            width:80vw;
+            height:300px;
+            margin:5px;
+            border:5px solid red;
+            display: flex;
+        }
+        .left,.right {
+            height:100%;
+        }
+        .left {
+            flex:0 1 300px;
+            background-color: blue;
+        }
+        .right {
+            flex:1 1 auto;
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <h1><a href="http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html?utm_source=tuicool">阮一峰flex布局博客</a></h1>
+    <div class="parent">
+        <div class="left"></div>
+        <div class="right">测试布局测试布局测试布局测试布局</div>
+    </div>
+</body>
+</html>

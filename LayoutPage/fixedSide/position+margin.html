@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .parent {
+            width:80vw;
+            height: 300px;
+            border: 5px solid red;
+            position: relative;
+        }
+        .left,.right {
+            height:100%;
+        }
+        .left {
+            position: absolute;
+            top:0;
+            left:0;
+            width:300px;
+            background:green;
+        }
+        .right {
+            margin-left:300px;
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="left"></div>
+        <div class="right"></div>
+    </div>
+
+    <div class="appParent">
+        <div class="top"></div>
+        <div class="bottom"></div>
+    </div>
+</body>
+</html>
