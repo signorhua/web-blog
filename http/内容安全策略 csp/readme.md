@@ -15,15 +15,37 @@
     
 #### 禁止在html代码里面内嵌js inlineScript
 
+    Content-Security-Policy ： 'script-src http: https:'
+
     why ：出于安全考虑，禁止html代码里面添加脚本语言
             XSS是一种经常出现在web应用中的计算机安全漏洞，它允许恶意web用户将代码植入到提供给其它用户使用的页面中
 
-    解决方案 响应头添加新信息：
+    解决方案 响应头添加新信息;
         
-        只能根据http 和 https 请求
+        所有请求只能根据http 和 https 请求
         Content-Security-Policy ： 'default-src http: https:'
 
-    补充：
-        只能根据本域名下的js进行加载
-        'Content-Security-Policy':'default-src \'self\''
+####  补充：
 
+    只能根据本域名下的所有请求进行加载,外部链接都不允许
+    'Content-Security-Policy':'default-src \'self\''
+
+    指定某一个网站的资源可以加载
+    'Content-Security-Policy':'default-src \'self\' https://cdn.bootcss.com'
+
+    表单提交限制本往网站
+    'Content-Security-Policy':'default-src \'self\'; form-action \'self\''
+
+    只限制script的请求，其他请求不限制,限制script请求只能是本网站和表单提交只能是本网站
+    'Content-Security-Policy':'script-src \'self\'; form-action \'self\''
+
+####  设置reporter报告功能 请求csp的相关
+
+    在此模式下，CSP策略不是强制性的，但是任何违规行为将会报告给一个指定的URI地址
+
+    'Content-Security-Policy-Report-Only':'script-src \'self\'; form-action \'self\'; report-uri /report'
+
+#### 启用违例报告
+
+    默认情况下，违规报告并不会发送。为启用发送违规报告，你需要指定 report-uri 策略指令，并提供至少一个URI地址去递交报告：
+    'Content-Security-Policy':'script-src \'self\'; form-action \'self\'; report-uri /report'

@@ -7,11 +7,14 @@
     <title>Document</title>
 </head>
 <body>
-    Content-Security-Policy ： 'default-src http: https:'
-    <script src="https://cdn.bootcss.com/jquery/2.2.4/jquery.js"></script>
-    <script src="./need.js"></script>
+    i am server2;
+    <br>
+    i want to server1;
     <script>
-        console.log('123');    
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', 'http://127.0.0.1:1235');
+        xhr.send();
     </script>
+    <!-- <script src="http://127.0.0.1:1235"></script> -->
 </body>
 </html>
