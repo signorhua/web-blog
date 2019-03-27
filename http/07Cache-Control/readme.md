@@ -61,7 +61,7 @@
 
     Etag    数据签名
         如果我们对一个资源进行修改，数据签名就会改变
-        配合 If-Match 或者 If-Non-Match使用
+        配合 If-Match 或者 If-None-Match使用
             服务端发送 Etag：123
             客户端返回 If-Match: 123
         

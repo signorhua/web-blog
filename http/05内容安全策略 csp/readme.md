@@ -1,5 +1,8 @@
 #### csp 内容安全策略
 
+    内容安全策略   (CSP) 是一个额外的安全层，用于检测并削弱某些特定类型的攻击，包括跨站脚本 (XSS) 和数据注入攻击等。无论是数据盗取、网站内容污染还是散发恶意软件，这些攻击都是主要的手段
+    默认为网页内容使用标准的同源策略
+
     作用：
         1.限制资源获取
         2.报告资源获取越权
@@ -19,11 +22,9 @@
 
     why ：出于安全考虑，禁止html代码里面添加脚本语言
             XSS是一种经常出现在web应用中的计算机安全漏洞，它允许恶意web用户将代码植入到提供给其它用户使用的页面中
-
-    解决方案 响应头添加新信息;
         
-        所有请求只能根据http 和 https 请求
-        Content-Security-Policy ： 'default-src http: https:'
+    所有请求只能根据http 和 https 请求
+    Content-Security-Policy ： 'default-src http: https:'
 
 ####  补充：
 
@@ -45,7 +46,7 @@
 
     'Content-Security-Policy-Report-Only':'script-src \'self\'; form-action \'self\'; report-uri /report'
 
-#### 启用违例报告
+#### 启用违例报告 违例和report不一样，这个强制
 
     默认情况下，违规报告并不会发送。为启用发送违规报告，你需要指定 report-uri 策略指令，并提供至少一个URI地址去递交报告：
     'Content-Security-Policy':'script-src \'self\'; form-action \'self\'; report-uri /report'
