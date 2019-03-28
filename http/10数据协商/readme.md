@@ -20,7 +20,7 @@
     Content-Encoding: 返回的编码格式
     Content-Language
     
-####补充 
+#### 补充 
     在chromeDevtools中netWork中，每个请求都有个size列，上下两个值，上面的是整个包，包含头信息，下面是主要内容，实际内容大小
     这个size值和Encoding压缩，编码格式有关,上面的值会随着压缩模式的变化而变化，下面实际的值不会变化，解压之后的实际内容不会变
     
