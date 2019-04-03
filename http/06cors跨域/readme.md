@@ -41,7 +41,8 @@
     'Access-Control-Max-Age': '1000'
 
 
-
+#### 补充
+    Access-Control-Allow-Credentials  响应头表示是否可以将对请求的响应暴露给页面。返回true则可以，其他值均不可以。
 
 
 

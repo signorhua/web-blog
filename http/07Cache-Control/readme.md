@@ -56,7 +56,7 @@
         配合 If-Modified-Since 或者 If-Unmodified-Since 使用
     对比上次修改时间以验证资源是否需要更新
         服务端发送 Last-Modified：123
-        客户端返回 If-Modified-Since: 123
+        客户端返回 If-Modified-Since: 123  这个时候服务端的值发生变化，则告诉客户端需要更新了
 
 
     Etag    数据签名
@@ -70,7 +70,12 @@
     谷歌的disable cache 和 设置Cache-Control:no-store;
     直接忽略掉所有缓存，和缓存相关的头信息
 
-##### 补充Vary
+##### 补充
 
-    vary:'X-Test-Cache',
-    必须vary声明的这个值，这个值是请求带的一个头，这个头信息的值必须相等，才可以共有一份缓存
+    Expires 
+    1.响应头包含日期/时间， 即在此时候之后，响应过期。
+    2.无效的日期，比如 0, 代表着过去的日期，即该资源已经过期
+    3.如果在Cache-Control响应头设置了 "max-age" 或者 "s-max-age" 指令，那么 Expires 头会被忽略。
+
+
+
