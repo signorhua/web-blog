@@ -1,6 +1,12 @@
 ## markdown语法
 ### https://www.jianshu.com/p/191d1e21f7ed
 
+###
+  GFM
+    一级列表使用 +
+    二级列表使用 -
+    三级列表使用 *
+
 ### markdown 插入链接图片
     1.将markdown需要用的图片放到git仓库中，发布到github上     
     2.访问github仓库,smshen/MarkdownPhotos · GitHub 
