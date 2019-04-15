@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>index</title>
+</head>
+
+<body>
+  <script>
+function get(url,callback){
+  var xhr = new XMLHttpRequest();
+  xhr.onload = function(){
+    callback(xhr);
+  }
+  xhr.open('get',url,true);
+  xhr.send();
+}
+function complate(xhr){
+  console.log(xhr);
+}
+
+get('./1.txt', complate);
+  </script>
+</body>
+
+</html>
