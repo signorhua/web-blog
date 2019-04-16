@@ -15,7 +15,22 @@
       ```
   - 数组可同时属于null Array Object
   - 对象同时属于 null Object
-
+  + 模拟实现 instanceof
+    ```js
+    function new_instanceof(fun,Fun){ //new_instanceof([1],Array);
+      var FunPro = Fun.prototype;
+      var fun_pro_ = fun.__proto__;
+      while(true){
+        if(fun_pro_ === null){
+          return false;
+        }
+        if(fun_pro_ === FunPro){
+          return true;
+        }
+        fun_pro_ = fun_pro_.__proto__;
+      }
+    } 
+    ```
 ***
 
 + Object.prototype.toString.call
