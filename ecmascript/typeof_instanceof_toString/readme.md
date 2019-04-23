@@ -1,5 +1,15 @@
 ### 判断数据类型
 
++ 数据类型
+    * undefined
+    * null
+    * boolean
+    * string
+    * number
+    * object
+    * symbol(ES6新增)
+***
+
 + typeof
     + 不能分辨出数组和obj
     + 不能分辨出null和obj
@@ -7,14 +17,14 @@
 ***
 
 + instanceof
+  + instanceof 原理：
+    + 在原型链(__proto__)中查找构造函数的原型对象
   + 基本包装类型 需要new方式才可实现
       ``` js
       var a = new String('a');
       a instanceof String // true
       'a' instanceof String // false
       ```
-  - 数组可同时属于null Array Object
-  - 对象同时属于 null Object
   + 模拟实现 instanceof
     ```js
     function new_instanceof(fun,Fun){ //new_instanceof([1],Array);
@@ -31,6 +41,9 @@
       }
     } 
     ```
+  + Function.prototype.__proto__ === Object.prototype //***
+  + Function.__proto__ === Function.prototype
+  + Object.__proto__ === Function.prototype
 ***
 
 + Object.prototype.toString.call
@@ -52,10 +65,13 @@
   Object.prototype.toString.call(undefined) // "[object Undefined]"
 
   Object.prototype.toString.call(Symbol(1)) // "[object Symbol]"
+
+  Object.prototype.toString.call(arguments)); // "[object Arguments]"
   ```
   ```js
   function returnType(){
     return Array.from(arguments).map((item)=>Object.prototype.toString.call(item).slice(8,-1));
   }
   ```
+***
 
