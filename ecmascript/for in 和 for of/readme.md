@@ -12,8 +12,10 @@
   + <strong>Object.keys 返回一个for in 顺序出来的数组</strong>
   - <strong>仅迭代自身的属性 而不是它的原型</strong>
     + Object.getOwnPropertyNames(obj)   **所有**
-      * 可枚举和不可枚举都不能列出来
+      * 可枚举和不可枚举都能列出来
       * 数组会将length属性一起返回
+    + Object.keys(obj); 
+      * 返回所有可枚举的数组 
     + obj.hasOwnProperty(prop)  **判断 不属于原型链**
       * 返回一个布尔值，指示对象自身属性中是否具有指定的属性，在原型链或者不存在都会返回false
     + obj.propertyIsEnumerable(prop) **判断 不属于原型链 并且可枚举**
@@ -99,8 +101,8 @@
 ### for of
 
   + 在可迭代对象上创建一个迭代循环，调用自定义迭代钩子，并为每个不同属性的值执行语句
-  + 也就是for in 出来的是 <strong>value</strong>
-  - for(variable in iterable)
+  + 也就是for of 出来的是 <strong>value</strong>
+  - for(variable of iterable)
     + variable 在每次迭代中，将不同属性的值分配给变量
     + iterable 被迭代枚举其属性的对象
   + 普通对象是无法使用for of的
