@@ -2,11 +2,6 @@
 
 ### bind
 
-  + Function.prototype.bind 返回一个新的函数
-  + 接受传参数
-    + 第一个为this
-    + 之后的皆为传参
-
   + 手动实现一个bind
      ```js
     Function.prototype.bind = function (oThis) {
@@ -55,10 +50,10 @@
 
     }
      ```
-    + Object.create可能不支持的情况下
-    + 要创建一个新的空指针来实现继承
+
+  + Object.create可能不支持的情况下,要创建一个新的空指针来实现继承
     ```js
-      Function.prototype.bind = function (oThis) {
+    Function.prototype.bind = function (oThis) {
         if (typeof this !== 'function') {
             throw new TypeError('What is trying to be bound is not callable');
         }
@@ -80,9 +75,59 @@
         FONP.prototype = fToBind.prototype; 
         fBound.prototype = new FONP(); 
 
+        // 为什么要用空指针，而不是直接使用 fBound.prototype = new fToBind()
+        // 答： 
+        //    1.你不知道 new fToBind() 发生了什么，可能返回的不是实例（this），所以不一定拿的到原型
+        //    2.我们想要拿到的是fToBind.prototype
+        //    3.新建一个空函数,new 了之后绝对返回本身实例
+        //    4.新函数的prototype 指向 fToBind.prototype
+        //    5.再进行 fBound.prototype = new FONP()空函数
+        //    6.这样子可以实现继承 (new fBound()).__proto__.__proto__ === fToBind.prototype;
         // *********
 
         return fBound;
 
     }
     ``` 
+
+### call 
+
+  + 手动实现一个call
+    ```js
+      Function.prototype.call = function(context){
+        if(!context){
+          context = typeof window === 'undefined' ? global : window;
+        }
+        // 解析参数
+        var callArg = [...arguments].slice(1);
+        // 需要改变this指向的函数
+        var fn = this;
+        // 改变上下文对象指向，传递参数
+        context.fn = this;
+        let result = context.fn(...callArg);
+        // 上面的操作，给context添加多了一个属性，将删除的属性删除掉
+        delete context.fn;
+        return result;
+      }
+    ``` 
+
+### apply
+
+  + 手动实现一个apply
+  ```js
+    Function.prototype.apply = function(context){
+      if(!context){
+        context = typeof window === 'undefined' ? global : window;
+      }
+      // 解析参数
+      var arg = arguments[1];
+      // 需要改变this指向的函数
+      var fn = this;
+      // 改变fn的上下文对象
+      context.fn = this;
+      let result = context.fn(...arg);
+      // 上面的操作，给context添加多了一个属性，将删除的属性删除掉
+      delete context.fn;
+      return result;
+    }
+  ``` 
