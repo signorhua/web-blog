@@ -169,7 +169,7 @@
   sumCurry(1,2)(3) === sum(1,2,3); // true
   ```
 
-### 附加 实现add(1)(2)(3)(4) 可以无限添加
+### 附加 实现add(1)(2)(3)(4) 可以无限追加
 
   ```js
   function add () {
@@ -184,7 +184,7 @@
           return add.apply(null, arg_fn);
       }
 
-      // 初始化为原始类型的操作改写，核心，返回所有参数值
+      // 初始化为原始类型的操作改写，核心，返回所有参数值之和
       fn.toString = function() {
           return args.reduce((a, b) => a + b,0);
       }
