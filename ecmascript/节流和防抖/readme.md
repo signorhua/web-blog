@@ -41,72 +41,66 @@
 
 ### js实现函数节流（一段时间内只能执行一次）
 
+  + 思路1 利用定时器实现
   ```js
-  function throttle(fn, interval = 300) {
-      let canRun = true;
-      return function () {
-          if (!canRun) return;
-          canRun = false;
-          setTimeout(() => {
-              fn.apply(this, arguments);
-              canRun = true;
-          }, interval);
-      };
-  }
-  ```
-
-### js实现函数防抖（n秒后执行，n秒之内再次触发，重新计时n秒）
-
-  ```js
-    function debounce(fn, wait = 300) {
-      var timer = null;
-      return function () {
-          if (timer) {// 如果是已经开始了的任务，时间就不为空，把定时器任务置空
-              clearTimeout(timer);
-              timer = null;
-          }
-          timer = setTimeout( () => {
-              fn.apply(this, arguments)
-          }, wait)
+    function throttle(fn,wait=3000,isStart=true){
+      let canUse = true;
+      return function(...arg){
+        // 是否执行一次先
+        if(isStart){
+          fn.apply(this,arg);
+          isStart = false;
+          return;
+        }
+        // 可以执行
+        if(canUse){
+          canUse = false;
+          setTimeout(()=>{
+            fn.apply(this,arg);
+            canUse = true;
+          },wait)
+        }
       }
     }
   ```
-### js实现防抖加强版，先立即执行一次，后面再进行防抖操作
+  + 思路2  记住点击时间,进行判断
+  ```js
+  function throttle(fn,wait=3000,isStart=true){
+    var pre = 0;
+    return function(...arg){
+    var now = +new Date();
+    if(!isStart){
+      pre = now;
+      isStart = true;
+    }
+    if(now - pre >= wait){
+      fn.apply(this,arg);
+      pre = now;
+    }
+    }
+  }
+  ```
+
+### js实现函数防抖
 
   ```js
-    function debounce(fn, wait = 300, immediate = true){
-      // 定时器，作用于，参数
-      let timer,context,args;
-      // 开启延时操作
-      const later = ()=> setTimeout(()=>{
-        // 延时函数执行完毕，清空缓存
-        timer = null;
-        // 非立即执行的情况
-        if (!immediate) {
-          fn.apply(context, args);
-          context = args = null;
+    function debounce(fn,wait=3000,isStart=true){
+      let timer = null;
+      return function(...arg){
+        //  是否立即执行一次
+        if(isStart){
+          fn.apply(this,arg);
+          isStart = false;
+          return;
         }
-      },wait)
-
-      return function(...params){
-        
-        if(!timer){
-          // 如果没有创建延迟执行函数，就创建一个
-          timer = later();
-          // 立即执行
-          if(immediate){
-            fn.apply(this,params);
-          }else{
-            // 非立即执行，将函数参数暴露出去
-            context = this;
-            args = params;
-          }
-        }else{
-          // 存在延迟执行函数，清除一个并且重新调用
+        // 如果定时器存在,清空定时器，重新定义
+        if(timer){
           clearTimeout(timer);
-          timer = later();
         }
-
+        timer = setTimeout(()=>{
+          fn.apply(this,arg);
+        },wait);
+      
       }
-  }
+    }
   ```
