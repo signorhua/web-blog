@@ -1,2 +1,2 @@
-# web-knowledge
-前端学习记录
+# web-blob
+日常前端学习记录
